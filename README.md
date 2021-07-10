@@ -12,3 +12,6 @@ mvn clean package
 ```
 java -Xms64m -Xmx1g -jar target/j8583-netty-server-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
+
+## Notes
+Please be aware that j8583 doesn't support LLLLLLBIN at the time this library created
