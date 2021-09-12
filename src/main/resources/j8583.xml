@@ -307,7 +307,7 @@
     <field num="50" type="NUMERIC" length="3"/>
     <field num="54" type="LLLVAR"/>
     <field num="55" type="LLLBIN"/>
-    <field num="56" type="LLLBIN"/>
+    <field num="56" type="LLLVAR"/>
     <field num="60" type="LLVAR"/>
     <field num="61" type="LLVAR"/>
     <field num="63" type="LLLVAR"/>

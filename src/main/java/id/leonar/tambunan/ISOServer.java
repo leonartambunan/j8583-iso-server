@@ -24,10 +24,9 @@ public class ISOServer {
 
         ServerConfiguration serverConfiguration = ServerConfiguration.newBuilder()
                 .addLoggingHandler(true)
-                .logSensitiveData(true)
-                .workerThreadsCount(4)
+                .logSensitiveData(false)
                 .replyOnError(true)
-                .workerThreadsCount(12)
+                .workerThreadsCount(100)
                 .idleTimeout(0)
                 .build();
 
@@ -36,11 +35,14 @@ public class ISOServer {
         server.addMessageListener(new IsoMessageListener<IsoMessage>() {
             public boolean onMessage(@NotNull ChannelHandlerContext ctx, @NotNull IsoMessage isoMessage) {
 
+                System.out.println("onMessage");
+
                 IsoMessage response = server.getIsoMessageFactory().createResponse(isoMessage);
 
                 //TODO: your main process is here
 
                 response.setField(39, IsoType.ALPHA.value("00", 2));
+                //response.setField(48, IsoType.LLLVAR.value("J8583 ROCKS", 0));
 
                 logger.info("------------------");
                 logger.info(response.debugString());
